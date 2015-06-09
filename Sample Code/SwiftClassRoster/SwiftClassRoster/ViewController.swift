@@ -8,14 +8,23 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource {
 
-  @IBOutlet weak var colorButton: UIButton!
-  var myNames = [String]()
+  @IBOutlet weak var tableView: UITableView!
+  var seahawks = [String]()
+  var mariners = [String]()
+  let numberOfSections = 2
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.view.backgroundColor = UIColor.yellowColor()
+    self.tableView.dataSource = self
+    
+    self.seahawks.append("Russell")
+    self.seahawks.append("Richard")
+    self.seahawks.append("Pete")
+    
+    self.mariners.append("Kyle")
+   // self.view.backgroundColor = UIColor.yellowColor()
     println("view did load")
   }
   
@@ -30,21 +39,44 @@ class ViewController: UIViewController {
     println("view did appear")
   }
   
-  @IBAction func switchChanged(sender: AnyObject) {
+  func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    return numberOfSections
+  }
+  
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
-    self.colorButton.backgroundColor = UIColor.greenColor()
-
+    if section == 0 {
+      return self.mariners.count
+    } else {
+    return self.seahawks.count
+    }
+  }
+  
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     
+    let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
+    cell.backgroundColor = UIColor.whiteColor()
+    if indexPath.row == 0 {
+      cell.backgroundColor = UIColor.redColor()
+    }
+    if indexPath.section == 0 {
+      let nameToDisplay = self.mariners[indexPath.row]
+      cell.textLabel?.text = nameToDisplay
+    } else {
+    let nameToDisplay = self.seahawks[indexPath.row]
+    //cell.textLabel?.text = "\(indexPath.row)"
+    cell.textLabel?.text = nameToDisplay
+    }
+    return cell
   }
-  @IBAction func buttonPressed(sender: AnyObject) {
-    self.view.backgroundColor = UIColor.orangeColor()
+  
+  func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    if section == 0 {
+      return "Mariners"
+    } else {
+      return "Seahawks"
+    }
   }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-
 
 }
 

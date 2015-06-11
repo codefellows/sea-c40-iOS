@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A25EBE6C1B29266D002D4B6B /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25EBE6B1B29266D002D4B6B /* Person.swift */; };
+		A25EBE6E1B293386002D4B6B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25EBE6D1B293386002D4B6B /* DetailViewController.swift */; };
 		A2F4A3CA1B1FEEAB00EF86BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F4A3C91B1FEEAB00EF86BA /* AppDelegate.swift */; };
 		A2F4A3CC1B1FEEAB00EF86BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F4A3CB1B1FEEAB00EF86BA /* ViewController.swift */; };
 		A2F4A3CF1B1FEEAB00EF86BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2F4A3CD1B1FEEAB00EF86BA /* Main.storyboard */; };
@@ -26,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A25EBE6B1B29266D002D4B6B /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		A25EBE6D1B293386002D4B6B /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A2F4A3C41B1FEEAB00EF86BA /* SwiftClassRoster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftClassRoster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2F4A3C81B1FEEAB00EF86BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2F4A3C91B1FEEAB00EF86BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				A2F4A3CB1B1FEEAB00EF86BA /* ViewController.swift */,
+				A25EBE6D1B293386002D4B6B /* DetailViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 		A2F4A3EC1B1FF67B00EF86BA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A25EBE6B1B29266D002D4B6B /* Person.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -236,8 +242,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A25EBE6C1B29266D002D4B6B /* Person.swift in Sources */,
 				A2F4A3CC1B1FEEAB00EF86BA /* ViewController.swift in Sources */,
 				A2F4A3CA1B1FEEAB00EF86BA /* AppDelegate.swift in Sources */,
+				A25EBE6E1B293386002D4B6B /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +443,7 @@
 				A2F4A3E51B1FEEAB00EF86BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A2F4A3E61B1FEEAB00EF86BA /* Build configuration list for PBXNativeTarget "SwiftClassRosterTests" */ = {
 			isa = XCConfigurationList;
@@ -443,6 +452,7 @@
 				A2F4A3E81B1FEEAB00EF86BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

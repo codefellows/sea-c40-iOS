@@ -63,34 +63,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yV6-Zw-bpv">
-                                <rect key="frame" x="279" y="289.5" width="42" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5w-I7-eNB">
-                                <rect key="frame" x="277" y="72" width="46" height="30"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UaB-TE-aI6">
+                                <rect key="frame" x="255.5" y="110" width="90.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qck-yK-Hke">
+                                <rect key="frame" x="255" y="72" width="91.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
-                        <color key="backgroundColor" red="0.26747486149999999" green="1" blue="0.32945114939999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="yV6-Zw-bpv" secondAttribute="centerY" id="DWT-dH-nyA"/>
-                            <constraint firstAttribute="centerX" secondItem="L5w-I7-eNB" secondAttribute="centerX" id="KIh-g9-x1p"/>
-                            <constraint firstItem="L5w-I7-eNB" firstAttribute="top" secondItem="60Y-34-WHo" secondAttribute="bottom" constant="8" id="VK2-LO-lJa"/>
-                            <constraint firstAttribute="centerX" secondItem="yV6-Zw-bpv" secondAttribute="centerX" id="yqp-XJ-fed"/>
+                            <constraint firstAttribute="centerX" secondItem="Qck-yK-Hke" secondAttribute="centerX" id="AL4-H5-wDT"/>
+                            <constraint firstItem="UaB-TE-aI6" firstAttribute="top" secondItem="Qck-yK-Hke" secondAttribute="bottom" constant="8" id="BDk-nV-GJp"/>
+                            <constraint firstAttribute="centerX" secondItem="UaB-TE-aI6" secondAttribute="centerX" id="QOa-Sa-xa6"/>
+                            <constraint firstItem="Qck-yK-Hke" firstAttribute="top" secondItem="60Y-34-WHo" secondAttribute="bottom" constant="8" id="Z4E-GO-UGY"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="firstNameLabel" destination="yV6-Zw-bpv" id="qXL-BQ-Bhh"/>
+                        <outlet property="firstNameTextField" destination="Qck-yK-Hke" id="q00-HH-uPI"/>
+                        <outlet property="lastNameTextField" destination="UaB-TE-aI6" id="AhC-Y6-wxU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hDT-Vu-udc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1896" y="292"/>
+            <point key="canvasLocation" x="1912" y="310"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Lrh-pV-Kog">

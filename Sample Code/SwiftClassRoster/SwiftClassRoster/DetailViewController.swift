@@ -8,8 +8,9 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UITextFieldDelegate {
+class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
   
+  @IBOutlet weak var imageView: UIImageView!
   @IBOutlet weak var firstNameTextField: UITextField!
   @IBOutlet weak var lastNameTextField: UITextField!
 
@@ -17,6 +18,17 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+      //self.imageView.image = UIImage(named: "seahawks")
+      
+//      let url = NSURL(string: "http://prod.www.seahawks.clubs.nfl.com/assets/images/imported/SEA/articleImages/RoundUp/140515-sherman-links-600.jpg")
+//      
+//      let imageData = NSData(contentsOfURL: url!)
+//      let image = UIImage(data: imageData!)
+//      self.imageView.image = image
+      
+      
+ 
       self.firstNameTextField.delegate = self
       self.lastNameTextField.delegate = self
       self.firstNameTextField.tag = 0
@@ -44,4 +56,23 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     }
   }
 
+  @IBAction func photoButtonPressed(sender: AnyObject) {
+    
+    let imagePickerController = UIImagePickerController()
+    imagePickerController.delegate = self
+    imagePickerController.sourceType = UIImagePickerControllerSourceType.Camera
+    imagePickerController.allowsEditing = true
+    
+    if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+          self.presentViewController(imagePickerController, animated: true, completion: nil)
+    }
+  }
+  
+  func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+    
+    let image = info[UIImagePickerControllerEditedImage] as! UIImage
+    self.imageView.image = image
+    
+    picker.dismissViewControllerAnimated(true, completion: nil)
+  }
 }

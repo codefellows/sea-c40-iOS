@@ -13,6 +13,7 @@ class ViewController: UIViewController, UITableViewDataSource {
   @IBOutlet weak var tableView: UITableView!
   
   var people = [Person]()
+  var myInfo = [String : Person]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -22,6 +23,13 @@ class ViewController: UIViewController, UITableViewDataSource {
     let richard = Person(first: "Richard", last: "Sherman")
     self.people.append(russell)
     self.people.append(richard)
+    
+    self.myInfo["bff"] = russell
+    self.myInfo["buddy"] = richard
+    
+    var QB1 = self.myInfo["bff1"]
+    QB1?.firstName
+    
     
   }
   
@@ -38,6 +46,21 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
     let personToDisplay = self.people[indexPath.row]
+    
+    //without optional binding
+    if personToDisplay.image != nil {
+      cell.imageView?.image = personToDisplay.image!
+    }
+    
+    //with optional binding
+    if let image = personToDisplay.image {
+      cell.imageView?.image = image
+    }
+    
+    
+    
+    
+    
     cell.textLabel?.text = personToDisplay.firstName + " " + personToDisplay.lastName
     return cell
   }
@@ -45,15 +68,19 @@ class ViewController: UIViewController, UITableViewDataSource {
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "ShowDetailViewController" {
       
-      let detailViewController = segue.destinationViewController as! DetailViewController
+    if let detailViewController = segue.destinationViewController as? DetailViewController {
       
-      let indexPath = self.tableView.indexPathForSelectedRow()
-      let selectedRow = indexPath!.row
+      let myIndexPath = self.tableView.indexPathForSelectedRow()
+      
+      if let indexPath = self.tableView.indexPathForSelectedRow() {
+      
+      let selectedRow = indexPath.row
       let selectedPerson = self.people[selectedRow]
       println(selectedPerson.firstName)
      detailViewController.selectedPerson = selectedPerson
+      }
     
-      
+      }
     }
   }
 

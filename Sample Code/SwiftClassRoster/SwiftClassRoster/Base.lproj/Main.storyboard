@@ -64,26 +64,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UaB-TE-aI6">
-                                <rect key="frame" x="255.5" y="110" width="90.5" height="30"/>
+                                <rect key="frame" x="255" y="110" width="90.5" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qck-yK-Hke">
-                                <rect key="frame" x="255" y="72" width="91.5" height="30"/>
+                                <rect key="frame" x="254" y="72" width="91.5" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kam.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="FmD-40-Rad">
+                                <rect key="frame" x="250" y="148" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="c1G-y2-a3R"/>
+                                    <constraint firstAttribute="height" constant="100" id="lxU-mn-DgV"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2f-z2-yii">
+                                <rect key="frame" x="275" y="562" width="49" height="30"/>
+                                <state key="normal" title="Photos"/>
+                                <connections>
+                                    <action selector="photoButtonPressed:" destination="hPe-UA-4iT" eventType="touchUpInside" id="UJ6-lj-o4S"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="Qck-yK-Hke" secondAttribute="centerX" id="AL4-H5-wDT"/>
                             <constraint firstItem="UaB-TE-aI6" firstAttribute="top" secondItem="Qck-yK-Hke" secondAttribute="bottom" constant="8" id="BDk-nV-GJp"/>
+                            <constraint firstAttribute="centerX" secondItem="K2f-z2-yii" secondAttribute="centerX" id="GZE-t3-lUz"/>
+                            <constraint firstAttribute="centerX" secondItem="FmD-40-Rad" secondAttribute="centerX" id="JLZ-ne-79s"/>
                             <constraint firstAttribute="centerX" secondItem="UaB-TE-aI6" secondAttribute="centerX" id="QOa-Sa-xa6"/>
+                            <constraint firstItem="nnu-Cx-zA8" firstAttribute="top" secondItem="K2f-z2-yii" secondAttribute="bottom" constant="8" id="Shr-xR-sAa"/>
+                            <constraint firstItem="FmD-40-Rad" firstAttribute="top" secondItem="UaB-TE-aI6" secondAttribute="bottom" constant="8" id="Tra-rb-q3D"/>
                             <constraint firstItem="Qck-yK-Hke" firstAttribute="top" secondItem="60Y-34-WHo" secondAttribute="bottom" constant="8" id="Z4E-GO-UGY"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="firstNameTextField" destination="Qck-yK-Hke" id="q00-HH-uPI"/>
+                        <outlet property="imageView" destination="FmD-40-Rad" id="Emi-fz-Q6g"/>
                         <outlet property="lastNameTextField" destination="UaB-TE-aI6" id="AhC-Y6-wxU"/>
                     </connections>
                 </viewController>
@@ -110,4 +129,7 @@
             <point key="canvasLocation" x="410" y="292"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="kam.jpg" width="3084" height="1978"/>
+    </resources>
 </document>

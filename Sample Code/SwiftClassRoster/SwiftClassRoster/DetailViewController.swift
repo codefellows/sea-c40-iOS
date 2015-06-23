@@ -26,19 +26,19 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
 //      let imageData = NSData(contentsOfURL: url!)
 //      let image = UIImage(data: imageData!)
 //      self.imageView.image = image
-      
-      
- 
-      self.firstNameTextField.delegate = self
-      self.lastNameTextField.delegate = self
-      self.firstNameTextField.tag = 0
-      self.lastNameTextField.tag = 1
-      
-      //self.firstNameLabel.text = self.selectedPerson.firstName
-      self.firstNameTextField.text = self.selectedPerson.firstName
-      self.lastNameTextField.text = self.selectedPerson.lastName
-        // Do any additional setup after loading the view.
+      self.setupTextFields()
     }
+  
+  private func setupTextFields() {
+    
+    self.firstNameTextField.delegate = self
+    self.lastNameTextField.delegate = self
+    self.firstNameTextField.tag = 0
+    self.lastNameTextField.tag = 1
+    self.firstNameTextField.text = self.selectedPerson.firstName
+    self.lastNameTextField.text = self.selectedPerson.lastName
+    
+  }
   
   func textFieldShouldReturn(textField: UITextField) -> Bool {
 

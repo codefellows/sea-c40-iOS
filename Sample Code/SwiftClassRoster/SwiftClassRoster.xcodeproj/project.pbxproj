@@ -10,6 +10,8 @@
 		A21EC3CE1B3268E100836FA6 /* kam.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A21EC3CD1B3268E100836FA6 /* kam.jpg */; };
 		A25EBE6C1B29266D002D4B6B /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25EBE6B1B29266D002D4B6B /* Person.swift */; };
 		A25EBE6E1B293386002D4B6B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25EBE6D1B293386002D4B6B /* DetailViewController.swift */; };
+		A28712BD1B38FBEB003FF642 /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28712BC1B38FBEB003FF642 /* PersonCell.swift */; };
+		A28712BF1B3905DF003FF642 /* People.plist in Resources */ = {isa = PBXBuildFile; fileRef = A28712BE1B3905DF003FF642 /* People.plist */; };
 		A2AFAE821B3264C90075BD5E /* seahawks.png in Resources */ = {isa = PBXBuildFile; fileRef = A2AFAE811B3264C90075BD5E /* seahawks.png */; };
 		A2F4A3CA1B1FEEAB00EF86BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F4A3C91B1FEEAB00EF86BA /* AppDelegate.swift */; };
 		A2F4A3CC1B1FEEAB00EF86BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F4A3CB1B1FEEAB00EF86BA /* ViewController.swift */; };
@@ -33,6 +35,8 @@
 		A21EC3CD1B3268E100836FA6 /* kam.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kam.jpg; sourceTree = "<group>"; };
 		A25EBE6B1B29266D002D4B6B /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		A25EBE6D1B293386002D4B6B /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A28712BC1B38FBEB003FF642 /* PersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
+		A28712BE1B3905DF003FF642 /* People.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = People.plist; sourceTree = "<group>"; };
 		A2AFAE811B3264C90075BD5E /* seahawks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = seahawks.png; sourceTree = "<group>"; };
 		A2F4A3C41B1FEEAB00EF86BA /* SwiftClassRoster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftClassRoster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2F4A3C81B1FEEAB00EF86BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 		A2F4A3C71B1FEEAB00EF86BA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A28712BE1B3905DF003FF642 /* People.plist */,
 				A2AFAE811B3264C90075BD5E /* seahawks.png */,
 				A21EC3CD1B3268E100836FA6 /* kam.jpg */,
 				A2F4A3C81B1FEEAB00EF86BA /* Info.plist */,
@@ -135,6 +140,7 @@
 		A2F4A3EA1B1FF66900EF86BA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A28712BC1B38FBEB003FF642 /* PersonCell.swift */,
 				A2F4A3CD1B1FEEAB00EF86BA /* Main.storyboard */,
 			);
 			name = Views;
@@ -231,6 +237,7 @@
 				A21EC3CE1B3268E100836FA6 /* kam.jpg in Resources */,
 				A2F4A3CF1B1FEEAB00EF86BA /* Main.storyboard in Resources */,
 				A2F4A3D41B1FEEAB00EF86BA /* LaunchScreen.xib in Resources */,
+				A28712BF1B3905DF003FF642 /* People.plist in Resources */,
 				A2AFAE821B3264C90075BD5E /* seahawks.png in Resources */,
 				A2F4A3D11B1FEEAB00EF86BA /* Images.xcassets in Resources */,
 			);
@@ -251,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A25EBE6C1B29266D002D4B6B /* Person.swift in Sources */,
+				A28712BD1B38FBEB003FF642 /* PersonCell.swift in Sources */,
 				A2F4A3CC1B1FEEAB00EF86BA /* ViewController.swift in Sources */,
 				A2F4A3CA1B1FEEAB00EF86BA /* AppDelegate.swift in Sources */,
 				A25EBE6E1B293386002D4B6B /* DetailViewController.swift in Sources */,

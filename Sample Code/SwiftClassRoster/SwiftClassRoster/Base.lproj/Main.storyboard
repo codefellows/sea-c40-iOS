@@ -17,17 +17,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="6aH-HW-Bwh">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="6aH-HW-Bwh">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="FOR-K0-TF0">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="85" id="FOR-K0-TF0" customClass="PersonCell" customModule="SwiftClassRoster" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FOR-K0-TF0" id="TI6-0i-Guj">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLS-r8-Nke">
+                                                    <rect key="frame" x="8" y="32" width="42" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08O-kO-Z7z">
+                                                    <rect key="frame" x="58" y="32" width="43.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kam.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ElP-Bp-RO3">
+                                                    <rect key="frame" x="562" y="27" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="dxL-dx-UDK"/>
+                                                        <constraint firstAttribute="width" constant="30" id="ks2-Xe-D7f"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ElP-Bp-RO3" firstAttribute="trailing" secondItem="TI6-0i-Guj" secondAttribute="trailingMargin" id="46x-Kb-UPA"/>
+                                                <constraint firstItem="08O-kO-Z7z" firstAttribute="top" secondItem="aLS-r8-Nke" secondAttribute="top" id="5RH-hn-UGM"/>
+                                                <constraint firstAttribute="centerY" secondItem="aLS-r8-Nke" secondAttribute="centerY" id="6nS-rd-cJd"/>
+                                                <constraint firstItem="08O-kO-Z7z" firstAttribute="leading" secondItem="aLS-r8-Nke" secondAttribute="trailing" constant="8" id="8L0-Dr-AoS"/>
+                                                <constraint firstItem="aLS-r8-Nke" firstAttribute="leading" secondItem="TI6-0i-Guj" secondAttribute="leadingMargin" id="DOl-Eu-ge2"/>
+                                                <constraint firstAttribute="centerY" secondItem="ElP-Bp-RO3" secondAttribute="centerY" id="aWU-XZ-vnC"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="firstNameLabel" destination="aLS-r8-Nke" id="NHY-wc-OHg"/>
+                                            <outlet property="lastNameLabel" destination="08O-kO-Z7z" id="xxN-Sj-KCT"/>
+                                            <outlet property="personImageView" destination="ElP-Bp-RO3" id="cTq-LX-Mxt"/>
                                             <segue destination="hPe-UA-4iT" kind="show" identifier="ShowDetailViewController" id="G0N-WS-qgq"/>
                                         </connections>
                                     </tableViewCell>

@@ -3,10 +3,6 @@
 <plist version="1.0">
 <array>
 	<dict>
-		<key>New item</key>
-		<string></string>
-		<key>Age</key>
-		<integer>0</integer>
 		<key>LastName</key>
 		<string>Mode</string>
 		<key>FirstName</key>

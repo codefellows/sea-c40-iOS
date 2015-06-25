@@ -60,10 +60,10 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     
     let imagePickerController = UIImagePickerController()
     imagePickerController.delegate = self
-    imagePickerController.sourceType = UIImagePickerControllerSourceType.Camera
+    imagePickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
     imagePickerController.allowsEditing = true
     
-    if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+    if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
           self.presentViewController(imagePickerController, animated: true, completion: nil)
     }
   }
@@ -72,6 +72,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     
     let image = info[UIImagePickerControllerEditedImage] as! UIImage
     self.imageView.image = image
+    self.selectedPerson.image = image
     
     picker.dismissViewControllerAnimated(true, completion: nil)
   }

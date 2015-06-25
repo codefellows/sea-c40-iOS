@@ -18,8 +18,12 @@ class ViewController: UIViewController, UITableViewDataSource {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.loadPeopleFromPlist()
-    
+    if let peopleFromArchive = self.loadFromArchive() {
+      self.people = peopleFromArchive
+    } else {
+      self.loadPeopleFromPlist()
+      self.saveToArchive()
+    }
     self.tableView.dataSource = self
 
   }
@@ -42,6 +46,7 @@ class ViewController: UIViewController, UITableViewDataSource {
   
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
+    self.saveToArchive()
     self.tableView.reloadData()
   }
   
@@ -52,6 +57,11 @@ class ViewController: UIViewController, UITableViewDataSource {
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     
     let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! PersonCell
+    cell.backgroundColor = UIColor.whiteColor()
+    cell.personImageView.layer.cornerRadius = 15
+    cell.personImageView.layer.masksToBounds = true;
+    cell.personImageView.layer.borderWidth = 10
+    cell.personImageView.layer.borderColor = UIColor.redColor().CGColor
     let personToDisplay = self.people[indexPath.row]
     
     //with optional binding
@@ -62,6 +72,12 @@ class ViewController: UIViewController, UITableViewDataSource {
     cell.firstNameLabel.text = personToDisplay.firstName
     cell.lastNameLabel.text = personToDisplay.lastName
  
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    
+    if let lastSelectedName = userDefaults.objectForKey("LastSelected") as? String where lastSelectedName == personToDisplay.firstName  {
+
+        cell.backgroundColor = UIColor.lightGrayColor()
+    }
     
     return cell
   }
@@ -79,11 +95,38 @@ class ViewController: UIViewController, UITableViewDataSource {
       let selectedPerson = self.people[selectedRow]
       println(selectedPerson.firstName)
      detailViewController.selectedPerson = selectedPerson
+        
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+      userDefaults.setObject(selectedPerson.firstName, forKey: "LastSelected")
+        userDefaults.synchronize()
+        
+        
        // detailViewController.setupTextFields()
       }
     
       }
     }
+  }
+  
+  func saveToArchive() {
+    
+    if let archivePath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).last as? String {
+      println(archivePath)
+      NSKeyedArchiver.archiveRootObject(self.people, toFile: archivePath + "/archive")
+    }
+  }
+  
+  func loadFromArchive() -> [Person]? {
+    
+    if let archivePath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).last as? String {
+
+      if let peopleFromArchive = NSKeyedUnarchiver.unarchiveObjectWithFile(archivePath + "/archive") as? [Person] {
+        return peopleFromArchive
+      }
+
+    }
+      return nil
+    
   }
 
 }

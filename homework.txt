@@ -1,0 +1,54 @@
+
+Session1:
+
+Create a playground file with the following functionality:
+Create a base Pokemon class with properties/methods that all pokemon will need.
+Create 10 different Pokemon. 5 of these Pokemon must be evolutions of another Pokemon. See http://pokemondb.net/pokedex/all (Links to an external site.) for reference. 
+Devise a way for one pokemon to damage another.
+
+Session2:
+
+Drag out 2 buttons and label on your initial view controller
+Create actions for the 2 buttons, and an outlet for the label
+Create an array of 5 strings and store it in a property on your view controller
+Implement an algorithm that cycles through strings in the array as you press the buttons, showing a different string in the label.
+
+Session 3:
+
+Wipe out the work you did for the session 2 homework. 
+Add a table view to your interface. It should take up the entire screen. Use autolayout like I did in class to ensure this.
+Show an array of strings in the table view. Follow the same steps I did in the slides/sample code.
+
+Session 4:
+
+Add a Person class to your Model layer. This class should contain properties for firstName and lastName
+Convert your table view to show an array of these person objects
+upon selecting on a cell, segue to a detail view controller, and show the selected person's firstName and lastName in separate labels.
+I want the firstName label to be dead center in the screen, and then the lastName label right below it, centered as well.
+
+Session 5:
+
+Get rid of the labels and replace them with text fields
+Using autolayout, constraint your text fields to the center and top of the screen
+When the user presses the return key while typing into the text fields, dismiss the keyboard
+When you change a selected person's first or last name, the change should be reflected on the main table view
+
+Session 6:
+
+Add an optional image property to your person class
+add a way for the user to take a picture with the camera
+the picture taken with the camera should be shown in an image view on the detail view controller, AND assigned to the selected person's image property
+remove all unsafe as! in your with much safer optional bindings + optional down casting.
+
+Session 7:
+
+Create a custom table view cell, with two labels for the last and first name, and image view. You can lay it out however you like, but it MUST use auto layout and it must work with all iPhone sizes.
+Use a Property list to load person objects into your table view
+
+Session 8:
+
+Using NSKeyedArchiver, persist any changes made to your person objects to disk. (including image changes!)
+Round your images with the corner radius property
+Bonus Challenges:
+Add a shadow to your images
+Create some way for the Detail View Controller to communicate back to the main View Controller whenever a change is made (so we don't need to rely on view will appear anymore to save)
